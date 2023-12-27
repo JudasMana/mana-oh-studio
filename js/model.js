@@ -1,13 +1,31 @@
-export const homeData = {
+import { homeHTML } from "../js/js-html/homeHtml";
+import { profileHTML } from "../js/js-html/profileHtml";
+import { contactHTML } from "../js/js-html/contactHtml";
+
+const homeData = {
   slidingElements: [".title", ".branding", ".project__gallery", ".contact__me"],
+  markup: homeHTML,
+  name: "home",
 };
 
-export const profileData = {
-  slidingElements: [],
+const profileData = {
+  slidingElements: [
+    ".greet",
+    ".profile__pic",
+    ".label",
+    ".description",
+    ".work__places",
+    ".collaborations",
+    ".contact__me",
+  ],
+  markup: profileHTML,
+  name: "profile",
 };
 
-export const contactData = {
-  slidingElements: [".contact__me"],
+const contactData = {
+  slidingElements: [".short__contact__me"],
+  markup: contactHTML,
+  name: "contact",
 };
 
 export const app = {

@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+$white: #ffffff;
+$black: #000000;
+$dark_grey: #7f7f7f;
+$light_grey: #e8e5e480;
+
+$mobile-width: 95%;
+$desktop-width: min(90%, 1320px);
+
+@mixin transOption {
+  transition: opacity 1s, transform 1s;
+}
+
+@mixin md {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

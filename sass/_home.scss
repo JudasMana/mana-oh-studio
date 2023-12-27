@@ -1,0 +1,334 @@
+@import "resources";
+
+header {
+  position: fixed;
+  width: min-content;
+  background-color: $light_grey;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 10rem;
+  padding: 0.3rem 0.3rem;
+  top: 1.5rem;
+  backdrop-filter: blur(30);
+  z-index: 10;
+
+  .header__link {
+    color: $black;
+    padding: 0.8rem 1.7rem;
+    border-radius: 10rem;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .header__link--active {
+    background-color: $white;
+  }
+}
+
+.title {
+  width: 70%;
+  margin-top: 18rem;
+  margin-bottom: 14rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.4rem;
+
+  @include transOption;
+
+  @include md {
+    font-size: 3rem;
+    width: 39.5rem;
+
+    margin-bottom: 2rem;
+  }
+
+  @include lg {
+    font-size: 4.5rem;
+    width: 50rem;
+  }
+}
+
+.branding {
+  display: none;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 8rem;
+
+  @include transOption;
+
+  @include md {
+    display: flex;
+  }
+
+  .skill {
+    background-color: $light_grey;
+    border-radius: 10rem;
+    padding: 0.5rem 0.9rem;
+  }
+}
+
+.project__gallery {
+  display: flex;
+  width: $mobile-width;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @include transOption;
+
+  @include md {
+    width: $desktop-width;
+  }
+
+  .project__couple {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include md {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+
+  .project {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+
+    .image__container {
+      width: 100%;
+      overflow: hidden;
+      aspect-ratio: 16/11;
+      border-radius: 1rem;
+      position: relative;
+
+      @include md {
+        aspect-ratio: 16/12;
+      }
+
+      &::after {
+        display: none;
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        backdrop-filter: blur(10) brightness(60%);
+        z-index: 1;
+        transition: all 0.3s;
+
+        @include md {
+          display: unset;
+        }
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      .project__image {
+        width: 100%;
+        height: 100%;
+        scale: 1.1;
+        object-position: center;
+        object-fit: cover;
+      }
+
+      .imposed__title {
+        position: absolute;
+        z-index: 2;
+        top: 1.3rem;
+        left: 1rem;
+        font-size: 0.9rem;
+        color: $white;
+        opacity: 0;
+        transition: all 0.6s;
+        display: none;
+
+        @include md {
+          display: inline-block;
+        }
+
+        .coming__soon {
+          display: block;
+          margin: 0.1rem 0 0;
+          color: $light_grey;
+        }
+      }
+      &:hover .imposed__title {
+        opacity: 1;
+      }
+
+      .arrow__container {
+        transform: translate(-2rem, 2rem);
+        opacity: 0;
+        transition: all 0.6s;
+        position: absolute;
+        top: 1.3rem;
+        right: 1.3rem;
+        background-color: $white;
+        width: 3rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        display: none;
+
+        @include md {
+          display: flex;
+        }
+
+        .arrow {
+          transform: rotate(45deg);
+          width: 1.5rem;
+        }
+      }
+      &:hover .arrow__container {
+        opacity: 1;
+        transform: translate(0);
+      }
+
+      .lock__container {
+        transform: translate(-2rem, 2rem);
+        opacity: 0;
+        transition: all 0.6s;
+        position: absolute;
+        top: 1.3rem;
+        right: 1.3rem;
+        background-color: $black;
+        width: 3rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        display: none;
+
+        @include md {
+          display: flex;
+        }
+
+        .lock {
+          width: 1.5rem;
+          filter: invert(100);
+        }
+      }
+      &:hover .lock__container {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+
+    .project__title {
+      color: $black;
+      font-size: 1.1rem;
+      width: max-content;
+      display: inline;
+
+      @include md {
+        display: none;
+      }
+    }
+
+    .coming__soon {
+      color: $dark_grey;
+      margin-left: 0.7rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.contact__me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+
+  @include transOption;
+
+  margin: 10rem 0;
+
+  @include md {
+    font-size: 2.4rem;
+  }
+
+  .work {
+    font-weight: 500;
+  }
+
+  .get__in__touch {
+    color: $dark_grey;
+    font-weight: 500;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin: 5rem 0;
+
+  @include md {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5rem 0 2rem;
+  }
+
+  .left__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+
+    @include md {
+      flex-direction: row;
+      font-size: 0.9rem;
+      gap: 0.7rem;
+    }
+
+    .star {
+      width: 2rem;
+      aspect-ratio: 1/1;
+      background-color: $black;
+    }
+  }
+
+  .socials {
+    display: flex;
+    gap: 0.8rem;
+
+    .social__link {
+      color: $black;
+
+      @include md {
+        font-size: 0.9rem;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.slided {
+  transform: translateY(10rem);
+  opacity: 0;
+}

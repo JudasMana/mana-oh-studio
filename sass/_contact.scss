@@ -1,0 +1,69 @@
+@import "resources";
+
+.contact__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .short__header {
+    position: static;
+    width: min-content;
+    background-color: $light_grey;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 10rem;
+    padding: 0.3rem 0.3rem;
+    top: 1.5rem;
+    backdrop-filter: blur(30);
+    z-index: 10;
+
+    margin-top: 1.5rem;
+
+    .header__link {
+      color: $black;
+      padding: 0.8rem 1.7rem;
+      border-radius: 10rem;
+      font-size: 1rem;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .header__link--active {
+      background-color: $white;
+    }
+  }
+
+  .short__contact__me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+
+    margin: auto;
+
+    @include transOption;
+
+    @include md {
+      font-size: 2.4rem;
+    }
+
+    .work {
+      font-weight: 500;
+    }
+
+    .get__in__touch {
+      color: $dark_grey;
+      font-weight: 500;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

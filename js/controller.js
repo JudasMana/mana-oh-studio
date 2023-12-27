@@ -1,12 +1,14 @@
 import * as Model from "./model.js";
 import * as View from "./view.js";
 
-const loadHome = function () {
-  View.addObserver(Model.app.home.slidingElements);
+const loadPage = function (page) {
+  Model.app.currentPage = page;
+  View.renderPage(Model.app[`${Model.app.currentPage}`]);
+  View.addHeaderHandler();
 };
 
 const init = function () {
-  loadHome();
-  View.addHeaderHandler(Model.app);
+  View.initWindow(loadPage);
+  View.addHeaderHandler();
 };
 init();
