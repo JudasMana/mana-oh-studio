@@ -6,7 +6,6 @@ export const initWindow = function (handler) {
   ["load", "popstate", "locationchange"].forEach((event) => {
     window.addEventListener(event, (e) => {
       handler(e.currentTarget.location.pathname.slice(1));
-      console.log(event);
     });
   });
 };
@@ -34,6 +33,8 @@ export const renderPage = function (pageData) {
   document.querySelector("body").innerHTML = pageData.markup;
   addObserver(pageData.slidingElements);
   window.scrollTo(0, 0);
+
+  // initProjects();
 };
 
 // add observer to sliding elements of page
@@ -55,7 +56,6 @@ const addObserver = function (elementTags) {
 const removeSlidedClass = function (entries) {
   entries.forEach((intersection) => {
     if (!intersection.isIntersecting) return;
-    console.log(intersection);
     setTimeout(
       () => intersection.target.classList.remove("slided"),
       +intersection.target.dataset.slideDelay
@@ -63,5 +63,16 @@ const removeSlidedClass = function (entries) {
     if (intersection.time < 100) {
       window.scrollTo(0, 0);
     }
+  });
+};
+
+export const initProjects = function () {
+  console.log(document.querySelectorAll(".project"));
+  document.querySelectorAll(".project").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      console.log(e);
+      e.preventDefault();
+      window.open();
+    });
   });
 };

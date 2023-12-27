@@ -40,7 +40,7 @@ export const homeHTML = `
 </div>
 <section class="project__gallery slided" data-slide-delay="300">
   <div class="project__couple">
-    <a href="./projects/aire.html" class="project">
+    <a href="../../html/projects/aire.html" class="project">
       <div class="image__container">
         <img
           src="${aire}"
