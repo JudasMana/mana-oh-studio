@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+$white: #ffffff;
+$black: #000000;
+$dark_grey: #7f7f7f;
+$light_grey: #e8e5e480;
+
+$mobile-width: 95%;
+$desktop-width: min(90%, 1320px);
+
+@mixin md {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+:root {
+  font-size: min(4vw, 14px);
+
+  @include md {
+    font-size: 16px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+}
+
+header {
+  position: fixed;
+  width: min-content;
+  background-color: $light_grey;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 10rem;
+  padding: 0.3rem 0.3rem;
+  top: 1.5rem;
+  backdrop-filter: blur(30);
+  z-index: 10;
+
+  .header__link {
+    color: $black;
+    padding: 0.8rem 1.7rem;
+    border-radius: 10rem;
+    font-size: 1rem;
+  }
+
+  .header__link--active {
+    background-color: $white;
+  }
+}
+
+.greet {
+  font-size: 2.5rem;
+  font-weight: 500;
+
+  margin-top: 22rem;
+  margin-bottom: 17rem;
+}
+
+.profile__pictures {
+  display: flex;
+  width: $mobile-width;
+  align-items: center;
+  height: 22rem;
+  overflow: hidden;
+  gap: 1rem;
+
+  @include md {
+    height: 28rem;
+  }
+
+  @include lg {
+    height: 32rem;
+  }
+
+  .profile__pic {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.7rem;
+
+    @include md {
+      width: 50%;
+    }
+  }
+
+  .pic__2 {
+    display: none;
+
+    @include md {
+      display: unset;
+    }
+  }
+}
+
+.about,
+.experience,
+.worked__with {
+  width: $mobile-width;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  margin: 7rem 0 0;
+
+  @include md {
+    margin: 11rem 0 0;
+  }
+
+  .label {
+    background-color: $light_grey;
+    padding: 0.5rem 0.7rem;
+    width: max-content;
+    border-radius: 10rem;
+  }
+
+  .description {
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+
+    @include md {
+      width: 38rem;
+      font-size: 2.5rem;
+      line-height: 2.7rem;
+    }
+
+    @include lg {
+      width: 47rem;
+    }
+  }
+}
+
+.experience,
+.worked__with {
+  .description {
+    font-size: 2.2rem;
+
+    @include md {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.work__places {
+  width: $mobile-width;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 4rem;
+
+  padding: 0 1rem;
+  margin-top: 7rem;
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 0.85rem;
+  }
+
+  @include lg {
+    font-size: 0.9rem;
+    width: $desktop-width;
+    padding: 0;
+    margin-top: 8rem;
+  }
+
+  .work__place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    @include lg {
+      gap: 0.7rem;
+    }
+
+    .time__period {
+      color: $dark_grey;
+    }
+
+    .company__name {
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+
+    .job__description {
+      color: $dark_grey;
+    }
+
+    .role {
+      background-color: $light_grey;
+      padding: 0.5rem 0.8rem;
+      border-radius: 10rem;
+
+      margin-top: 0.8rem;
+    }
+  }
+}
+
+.collaborations {
+  width: $mobile-width;
+  display: grid;
+  grid-template-columns: repeat(2, 13rem);
+  justify-content: space-around;
+  row-gap: 5rem;
+
+  margin: 8rem 0;
+
+  @include md {
+    grid-template-columns: repeat(4, 11.5rem);
+    padding: 0 1rem;
+  }
+
+  .collab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      width: 100%;
+    }
+
+    .logo__white {
+      filter: invert(100);
+    }
+  }
+}
+
+.contact__me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+
+  margin: 10rem 0;
+
+  @include md {
+    font-size: 2.4rem;
+  }
+
+  .work {
+    font-weight: 500;
+  }
+
+  .get__in__touch {
+    color: $dark_grey;
+    font-weight: 500;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin: 5rem 0;
+
+  @include md {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5rem 0 2rem;
+  }
+
+  .left__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+
+    @include md {
+      flex-direction: row;
+      font-size: 0.9rem;
+      gap: 0.7rem;
+    }
+
+    .star {
+      width: 2rem;
+      aspect-ratio: 1/1;
+      background-color: $black;
+    }
+  }
+
+  .socials {
+    display: flex;
+    gap: 0.8rem;
+
+    .social__link {
+      color: $black;
+
+      @include md {
+        font-size: 0.9rem;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
