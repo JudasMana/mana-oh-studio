@@ -5,8 +5,8 @@ export const initWindow = function (handler) {
 
   ["load", "popstate", "locationchange"].forEach((event) => {
     window.addEventListener(event, (e) => {
-      console.log(`${event}: ${e.currentTarget.location.pathname.slice(1)}`);
       handler(e.currentTarget.location.pathname.slice(1));
+      console.log(event);
     });
   });
 };
@@ -18,6 +18,8 @@ export const addHeaderHandler = function () {
   header.addEventListener("click", function (e) {
     const btn = e.target.closest(".header__link");
     if (!btn) return;
+
+    window.scrollTo(0, 0);
     window.history.pushState(null, "", `/${btn.dataset.destination}`);
     window.dispatchEvent(new Event("locationchange"));
   });
@@ -29,9 +31,9 @@ export const renderPage = function (pageData) {
     .slice(1)
     .toLowerCase()} \u2015 OH.STUDIO`;
 
-  scrollTo(0, 0);
   document.querySelector("body").innerHTML = pageData.markup;
   addObserver(pageData.slidingElements);
+  window.scrollTo(0, 0);
 };
 
 // add observer to sliding elements of page
@@ -53,9 +55,13 @@ const addObserver = function (elementTags) {
 const removeSlidedClass = function (entries) {
   entries.forEach((intersection) => {
     if (!intersection.isIntersecting) return;
+    console.log(intersection);
     setTimeout(
       () => intersection.target.classList.remove("slided"),
       +intersection.target.dataset.slideDelay
     );
+    if (intersection.time < 100) {
+      window.scrollTo(0, 0);
+    }
   });
 };
