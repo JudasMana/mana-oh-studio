@@ -20,6 +20,7 @@
 
   @include md {
     height: 28rem;
+    width: $desktop-width;
   }
 
   @include lg {
