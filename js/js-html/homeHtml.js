@@ -56,7 +56,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Aire</p>
+      <p class="home__project__title">Aire</p>
     </div>
     <div class="project project--active" data-project-name="correlated">
       <div class="image__container">
@@ -74,7 +74,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Correlated</p>
+      <p class="home__project__title">Correlated</p>
     </div>
   </div>
   <div class="project__couple">
@@ -94,7 +94,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Channel 5</p>
+      <p class="home__project__title">Channel 5</p>
     </div>
     <div class="project project--active" data-project-name="ronald-abram">
       <div class="image__container">
@@ -112,7 +112,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Ronald Abram</p>
+      <p class="home__project__title">Ronald Abram</p>
     </div>
   </div>
   <div class="project__couple">
@@ -130,7 +130,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Propeller</p>
+      <p class="home__project__title">Propeller</p>
     </div>
     <div class="project project--active" data-project-name="schuh">
       <div class="image__container">
@@ -148,7 +148,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Schuh</p>
+      <p class="home__project__title">Schuh</p>
     </div>
   </div>
   <div class="project__couple">
@@ -168,7 +168,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Paperstreet</p>
+      <p class="home__project__title">Paperstreet</p>
     </div>
     <div class="project project--active" data-project-name="oh-supply">
       <div class="image__container">
@@ -184,7 +184,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">OH.SUPPLY</p>
+      <p class="home__project__title">OH.SUPPLY</p>
     </div>
   </div>
   <div class="project__couple">
@@ -204,7 +204,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">Monokel Eyewear</p>
+      <p class="home__project__title">Monokel Eyewear</p>
     </div>
     <div class="project">
       <div class="image__container">
@@ -224,7 +224,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">
+      <p class="home__project__title">
         Lawtrades <span class="coming__soon">Coming soon</span>
       </p>
     </div>
@@ -248,7 +248,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">
+      <p class="home__project__title">
         Baselworld <span class="coming__soon">Coming soon</span>
       </p>
     </div>
@@ -266,7 +266,7 @@ export const homeHTML = `
           />
         </div>
       </div>
-      <p class="project__title">NYCB</p>
+      <p class="home__project__title">NYCB</p>
     </div>
   </div>
 </section>

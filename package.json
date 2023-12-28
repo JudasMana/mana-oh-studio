@@ -2,7 +2,7 @@
   "name": "oh-studio",
   "version": "1.0.0",
   "description": "Reproduction of the website oh.studio",
-  "main": "index.js",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
