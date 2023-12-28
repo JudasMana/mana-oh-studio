@@ -78,7 +78,7 @@ const generateProjecteMarkup = function (data) {
     mainVisual = `
     <section class="main__visual">
       <div class="visual__container ${data.elementsId}">
-          <video autoplay loop muted class="visual">
+          <video autoplay loop muted preload playsinline class="visual">
             <source src="${data.mainVisual.file}" type="video/mp4">
           </video>
       </div>
@@ -155,7 +155,7 @@ const generateProjecteMarkup = function (data) {
           <div class="visual__container ${
             data.elementsId
           }" id="${`${data.elementsId}-${i}`}">
-              <video autoplay loop muted class="visual">
+              <video autoplay loop muted preload playsinline class="visual">
                 <source src="${visual.file}" type="video/mp4">
               </video>
           </div>
@@ -195,7 +195,7 @@ const generateProjecteMarkup = function (data) {
       <div class="single__visual ${
         data.elementsId
       }" id="${`${data.elementsId}-${i}`}">
-        <video autoplay loop muted class="visual">
+        <video autoplay loop muted playsinline preload class="visual">
           <source src="${visualFile.file}" type="video/mp4">
         </video>
       </div>`;

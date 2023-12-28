@@ -91,11 +91,11 @@ export const profileHTML = `
   <div class="work__place">
     <p class="time__period">2017</p>
     <p class="company__name">Agency TK</p>
-    <p class="job__description">enior Product Designer</p>
+    <p class="job__description">Senior Product Designer</p>
     <p class="role">Permanent</p>
   </div>
   <div class="work__place">
-    <p class="time__period">20172</p>
+    <p class="time__period">2017</p>
     <p class="company__name">Agency TK</p>
     <p class="job__description">Digital Designer</p>
     <p class="role">Permanent</p>

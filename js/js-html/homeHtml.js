@@ -118,7 +118,7 @@ export const homeHTML = `
   <div class="project__couple">
     <div class="project project--active" data-project-name="propeller"> 
       <div class="image__container">
-        <video alt="Propeller" preload="true" autoplay="true" muted="true" loop="true" class="project__image">
+        <video alt="Propeller" preload autoplay muted loop playsinline class="project__image">
           <source src="${propeller}" />
         </video>
         <p class="imposed__title">Propeller</p>
@@ -172,7 +172,7 @@ export const homeHTML = `
     </div>
     <div class="project project--active" data-project-name="oh-supply">
       <div class="image__container">
-        <video alt="OH.SUPPLY" autoplay="true" loop class="project__image">
+        <video alt="OH.SUPPLY" muted preload autoplay playsinline loop class="project__image">
           <source src="${ohSupply}" type="video/mp4" />
         </video>
         <p class="imposed__title">OH.SUPPLY</p>
@@ -254,7 +254,7 @@ export const homeHTML = `
     </div>
     <div class="project project--active" data-project-name="nycb">
       <div class="image__container">
-        <video alt="NYCB" autoplay="true" loop class="project__image">
+        <video alt="NYCB" autoplay playsinline preload muted loop class="project__image">
           <source src="${nycb}" type="video/mp4" />
         </video>
         <p class="imposed__title">NYCB</p>
