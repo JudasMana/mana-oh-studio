@@ -1,11 +1,18 @@
+import { capitalizeWords } from "./helper";
+
 // add event listeners to window, runs LoadPage when it recievs an event
 export const initWindow = function (handler) {
-  window.history.replaceState(null, "", "/home");
-  document.title = "Home \u2015 OH.STUDIO";
-
   ["load", "popstate", "locationchange"].forEach((event) => {
     window.addEventListener(event, (e) => {
-      handler(e.currentTarget.location.pathname.slice(1));
+      const path = e.currentTarget.location.pathname;
+      if (path.indexOf("/projects/") !== -1) {
+        handler(path.slice("/projects/".length), "project");
+      } else if (["/", "/profile", "/contact"].includes(path)) {
+        handler(path === "/" ? "home" : path.slice(1), "main");
+      } else {
+        e.currentTarget.location.pathname = "/";
+        handler("home", "main");
+      }
     });
   });
 };
@@ -19,26 +26,29 @@ export const addHeaderHandler = function () {
     if (!btn) return;
 
     window.scrollTo(0, 0);
-    window.history.pushState(null, "", `/${btn.dataset.destination}`);
+    window.history.pushState(
+      null,
+      "",
+      btn.dataset.destination === "home" ? "/" : `/${btn.dataset.destination}`
+    );
     window.dispatchEvent(new Event("locationchange"));
   });
 };
 
 // render a page based on the page data
 export const renderPage = function (pageData) {
-  document.title = `${pageData.name.slice(0, 1).toUpperCase()}${pageData.name
-    .slice(1)
-    .toLowerCase()} \u2015 OH.STUDIO`;
+  document.title =
+    pageData.name === "home"
+      ? "OH.STUDIO"
+      : `${capitalizeWords(pageData.name)} \u2015 OH.STUDIO`;
 
   document.querySelector("body").innerHTML = pageData.markup;
   addObserver(pageData.slidingElements);
   window.scrollTo(0, 0);
-
-  // initProjects();
 };
 
 // add observer to sliding elements of page
-const addObserver = function (elementTags) {
+export const addObserver = function (elementTags) {
   const observer = new IntersectionObserver(removeSlidedClass, {
     root: null,
     threshold: 0,
@@ -63,16 +73,5 @@ const removeSlidedClass = function (entries) {
     if (intersection.time < 100) {
       window.scrollTo(0, 0);
     }
-  });
-};
-
-export const initProjects = function () {
-  console.log(document.querySelectorAll(".project"));
-  document.querySelectorAll(".project").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      console.log(e);
-      e.preventDefault();
-      window.open();
-    });
   });
 };

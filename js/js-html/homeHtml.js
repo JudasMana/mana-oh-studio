@@ -40,7 +40,7 @@ export const homeHTML = `
 </div>
 <section class="project__gallery slided" data-slide-delay="300">
   <div class="project__couple">
-    <a href="../../html/projects/aire.html" class="project">
+    <div class="project project--active" data-project-name="aire">
       <div class="image__container">
         <img
           src="${aire}"
@@ -57,8 +57,8 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Aire</p>
-    </a>
-    <a href="./projects/correlated.html" class="project">
+    </div>
+    <div class="project project--active" data-project-name="correlated">
       <div class="image__container">
         <img
           src="${correlated}"
@@ -75,10 +75,10 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Correlated</p>
-    </a>
+    </div>
   </div>
   <div class="project__couple">
-    <a href="./projects/channel5.html" class="project">
+    <div class="project project--active" data-project-name="channel 5">
       <div class="image__container">
         <img
           src="${channel5}"
@@ -95,8 +95,8 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Channel 5</p>
-    </a>
-    <a href="./projects/ronald-abram.html" class="project">
+    </div>
+    <div class="project project--active" data-project-name="ronald abram">
       <div class="image__container">
         <img
           src="${ronaldAbram}"
@@ -113,10 +113,10 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Ronald Abram</p>
-    </a>
+    </div>
   </div>
   <div class="project__couple">
-    <a href="./projects/propeller.html" class="project">
+    <div class="project project--active" data-project-name="propeller"> 
       <div class="image__container">
         <video alt="Propeller" preload="true" autoplay="true" muted="true" loop="true" class="project__image">
           <source src="${propeller}" />
@@ -131,8 +131,8 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Propeller</p>
-    </a>
-    <a href="./projects/schuh.html" class="project">
+    </div>
+    <div class="project project--active" data-project-name="schuh">
       <div class="image__container">
         <img
           src="${schuh}"
@@ -149,10 +149,10 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Schuh</p>
-    </a>
+    </div>
   </div>
   <div class="project__couple">
-    <a href="./projects/paperstreet.html" class="project">
+    <div class="project project--active" data-project-name="paperstreet">
       <div class="image__container">
         <img
           src="${paperstreet}"
@@ -169,8 +169,8 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Paperstreet</p>
-    </a>
-    <a href="./projects/oh-supply.html" class="project">
+    </div>
+    <div class="project project--active" data-project-name="oh-supply">
       <div class="image__container">
         <video alt="OH.SUPPLY" autoplay="true" loop class="project__image">
           <source src="${ohSupply}" type="video/mp4" />
@@ -185,10 +185,10 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">OH.SUPPLY</p>
-    </a>
+    </div>
   </div>
   <div class="project__couple">
-    <a href="./projects/monokel.html" class="project">
+    <div class="project project--active" data-project-name="monokel-eyewear">
       <div class="image__container">
         <img
           src="${monokel}"
@@ -205,8 +205,8 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">Monokel Eyewear</p>
-    </a>
-    <div href="" class="project">
+    </div>
+    <div class="project">
       <div class="image__container">
         <img
           src="${lawtrades}"
@@ -230,7 +230,7 @@ export const homeHTML = `
     </div>
   </div>
   <div class="project__couple">
-    <div href="" class="project">
+    <div class="project">
       <div class="image__container">
         <img
           src="${baselworld}"
@@ -252,7 +252,7 @@ export const homeHTML = `
         Baselworld <span class="coming__soon">Coming soon</span>
       </p>
     </div>
-    <a href="./projects/nycb.html" class="project">
+    <div class="project project--active" data-project-name="nycb">
       <div class="image__container">
         <video alt="NYCB" autoplay="true" loop class="project__image">
           <source src="${nycb}" type="video/mp4" />
@@ -267,12 +267,12 @@ export const homeHTML = `
         </div>
       </div>
       <p class="project__title">NYCB</p>
-    </a>
+    </div>
   </div>
 </section>
-<section class="contact__me slided" data-slide-delay="0">
-  <p class="work">Let's work together.</p>
-  <a href="mailto:oli@ohstudio" class="get__in__touch">Get in touch.</a>
+<section class="contact__me">
+  <p class="work slided" data-slide-delay="0">Let's work together.</p>
+  <a href="mailto:oli@ohstudio" class="get__in__touch slided" data-slide-delay="50">Get in touch.</a>
 </section>
 <footer>
   <div class="left__footer">

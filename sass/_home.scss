@@ -248,13 +248,17 @@ header {
   }
 }
 
+.project--active {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .contact__me {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
-
-  @include transOption;
 
   margin: 10rem 0;
 
@@ -264,11 +268,15 @@ header {
 
   .work {
     font-weight: 500;
+
+    @include transOption;
   }
 
   .get__in__touch {
     color: $dark_grey;
     font-weight: 500;
+
+    @include transOption;
 
     &:hover {
       opacity: 0.5;

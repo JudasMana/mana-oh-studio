@@ -195,9 +195,9 @@ export const profileHTML = `
     />
   </div>
 </section>
-<section class="contact__me slided" data-slide-delay="0">
-  <p class="work">Let's work together.</p>
-  <a href="mailto:oli@ohstudio" class="get__in__touch">Get in touch.</a>
+<section class="contact__me">
+  <p class="work slided" data-slide-delay="0">Let's work together.</p>
+  <a href="mailto:oli@ohstudio" class="get__in__touch slided" data-slide-delay="50">Get in touch.</a>
 </section>
 <footer>
   <div class="left__footer">

@@ -7,9 +7,9 @@ export const contactHTML = `
   <button data-destination="profile" class="header__link profile">Profile</button>
   <button data-destination="contact" class="header__link header__link--active contact">Contact</button>
 </header>
-<section class="short__contact__me slided" data-slide-delay="100">
-  <p class="work">Let's work together.</p>
-  <a href="mailto:oli@ohstudio" class="get__in__touch">Get in touch.</a>
+<section class="short__contact__me">
+  <p class="work slided" data-slide-delay="100">Let's work together.</p>
+  <a href="mailto:oli@ohstudio" class="get__in__touch slided" data-slide-delay="150">Get in touch.</a>
 </section>
 <footer>
   <div class="left__footer">
