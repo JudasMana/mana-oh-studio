@@ -78,7 +78,7 @@ export const homeHTML = `
     </div>
   </div>
   <div class="project__couple">
-    <div class="project project--active" data-project-name="channel 5">
+    <div class="project project--active" data-project-name="channel-5">
       <div class="image__container">
         <img
           src="${channel5}"
@@ -96,7 +96,7 @@ export const homeHTML = `
       </div>
       <p class="project__title">Channel 5</p>
     </div>
-    <div class="project project--active" data-project-name="ronald abram">
+    <div class="project project--active" data-project-name="ronald-abram">
       <div class="image__container">
         <img
           src="${ronaldAbram}"

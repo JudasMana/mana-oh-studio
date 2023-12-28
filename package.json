@@ -4,8 +4,8 @@
   "description": "Reproduction of the website oh.studio",
   "main": "index.js",
   "scripts": {
-    "start": "parcel html/index.html",
-    "build": "parcel build html/index.html --dist-dir ./dist"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "author": "Davide Manassi",
   "license": "ISC",

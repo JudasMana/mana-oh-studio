@@ -1,6 +1,9 @@
 import { capitalizeWords } from "./helper";
 
-// add event listeners to window, runs LoadPage when it recievs an event
+/**
+ * Adds the event handlers to the window. The "locationchange" event is fired by the header (see addHeaderHandler function)
+ * @param {function} handler The function to run when the events fire
+ */
 export const initWindow = function (handler) {
   ["load", "popstate", "locationchange"].forEach((event) => {
     window.addEventListener(event, (e) => {
@@ -17,10 +20,12 @@ export const initWindow = function (handler) {
   });
 };
 
-// add events listener to header. Fires a locationchange event when clicked, giving the name of the target page
+/**
+ * Adds a click event listener to the header of the main pages. A click fires a "locationchange" event listened by the window
+ */
 export const addHeaderHandler = function () {
   const header = document.querySelector("header");
-  if (!header) return;
+  if (!header || header.classList.contains("project__header")) return;
   header.addEventListener("click", function (e) {
     const btn = e.target.closest(".header__link");
     if (!btn) return;
@@ -35,7 +40,10 @@ export const addHeaderHandler = function () {
   });
 };
 
-// render a page based on the page data
+/**
+ * renders the page html (see js/js-html folder) to the screen
+ * @param {Object} pageData the data object of a main page (see model module)
+ */
 export const renderPage = function (pageData) {
   document.title =
     pageData.name === "home"
@@ -47,7 +55,10 @@ export const renderPage = function (pageData) {
   window.scrollTo(0, 0);
 };
 
-// add observer to sliding elements of page
+/**
+ * Creates an observer and observes all the elements passed. The observer is used to give the sliding effect to the elements in the page
+ * @param {array} elementTags List of all the tags (class or id) of the elements that need to be observed
+ */
 export const addObserver = function (elementTags) {
   const observer = new IntersectionObserver(removeSlidedClass, {
     root: null,
@@ -62,7 +73,10 @@ export const addObserver = function (elementTags) {
   });
 };
 
-// remove "slided" class from sliding elements of page
+/**
+ * On intersetion, removes the "slided" clasas to elements which need to be slided
+ * @param {entry Object Array} entries The array given back by an intersection observed by the IntersectionObserver
+ */
 const removeSlidedClass = function (entries) {
   entries.forEach((intersection) => {
     if (!intersection.isIntersecting) return;

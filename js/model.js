@@ -123,7 +123,7 @@ const correlatedData = {
 
 const channel5Data = {
   elementsId: "channel__5",
-  name: "channel 5",
+  name: "channel-5",
   title: "Channel 5",
   caption: "A new interface for the My5 app",
   mainVisual: { file: channel5VisualMain, type: "image" },
@@ -168,7 +168,7 @@ const channel5Data = {
 
 const ronaldAbramData = {
   elementsId: "ronald__abram",
-  name: "ronald abram",
+  name: "ronald-abram",
   title: "Ronald Abram",
   caption: "A luxury jewellery brand rich in heritage",
   mainVisual: { file: ronaldAbramVisualVideo, type: "video" },
@@ -430,6 +430,9 @@ const nycbData = {
   ],
 };
 
+/**
+ * This is is the state of the application, containing the data for all the main pages and all the projects
+ */
 export const app = {
   home: homeData,
   profile: profileData,

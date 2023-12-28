@@ -1,7 +1,10 @@
-import { capitalizeWords } from "./helper";
 import { addObserver } from "./view";
 import logo from "../resources/icons/logo.webp";
 
+/**
+ * Adds events listeners for clicks on active projects on the main page
+ * @param {function} handler function to be fired on event listened
+ */
 export const addProjectsHandler = function (handler) {
   document.querySelectorAll(".project--active").forEach((el) => {
     el.addEventListener("click", (e) => {
@@ -14,6 +17,10 @@ export const addProjectsHandler = function (handler) {
   });
 };
 
+/**
+ * Renders a project to the screen
+ * @param {Object} projectData the data of an object (see model module)
+ */
 export const renderProject = function (projectData) {
   if (!projectData) return;
 
@@ -26,6 +33,11 @@ export const renderProject = function (projectData) {
   window.history.pushState(null, "", `/projects/${projectData.name}`);
 };
 
+/**
+ * Creates the markup of a project page
+ * @param {Object} data the data of an object (see model module)
+ * @returns the markup ass a string
+ */
 const generateProjecteMarkup = function (data) {
   let elements = [];
 
@@ -242,6 +254,10 @@ const generateProjecteMarkup = function (data) {
   return elements.join("");
 };
 
+/**
+ * Adds event listener to the header of project pages
+ * @param {function} handler the function fired on click event
+ */
 export const addExitHandler = function (handler) {
   const exit = document.querySelector(".project__header");
   if (!exit) return;
